@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b1f33" />
+      <stop offset="100%" stop-color="#122c45" />
+    </linearGradient>
+    <linearGradient id="river" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1d6fb8" />
+      <stop offset="100%" stop-color="#0b4f82" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#sky)" />
+  <path d="M0 320 C300 380 500 220 700 320 S1200 340 1200 340 L1200 800 L0 800 Z" fill="url(#river)" />
+  <path d="M0 360 C300 420 500 260 700 360 S1200 380 1200 380 L1200 800 L0 800 Z" fill="#5bb3ff" opacity="0.7" />
+  <circle cx="860" cy="220" r="72" fill="#9ed0ff" opacity="0.34" />
+  <text x="600" y="720" text-anchor="middle" fill="#e2efff" font-family="Inter, sans-serif" font-size="56" font-weight="700">River Overflow</text>
+</svg>

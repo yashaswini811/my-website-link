@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flood Prediction Input</title>
+    <link rel="stylesheet" href="/static/main.css" />
+</head>
+<body class="page-predict">
+    <div class="page-shell">
+        <div class="page-background page-background-form"></div>
+        <header class="site-header">
+            <a class="brand" href="/">Rising Waters</a>
+            <nav class="site-nav">
+                <a href="/">Home</a>
+            </nav>
+        </header>
+
+        <section class="hero hero-small hero-form">
+            <div class="hero-copy">
+                <span class="eyebrow">Predict Flood Risk</span>
+                <h1>Enter current weather readings for a rapid flood risk evaluation.</h1>
+                <p>Use rainfall, temperature, humidity, and seasonal totals to generate an accurate prediction.</p>
+            </div>
+        </section>
+
+        <main class="content form-page">
+            <section class="panel split-grid">
+                <div class="form-panel">
+                    <h2>Weather Parameters</h2>
+                    <p>Provide the latest meteorological readings for the most reliable results.</p>
+                    <form method="post" class="form-grid">
+                        {% for feature in features %}
+                        <div class="form-group">
+                            <div class="form-label-row">
+                                <label for="{{ feature }}">{{ feature }}</label>
+                                {% if feature == 'Temp' %}
+                                <span class="input-unit">(°C)</span>
+                                {% elif feature == 'Humidity' or feature == 'Cloud Cover' %}
+                                <span class="input-unit">(%)</span>
+                                {% elif feature in ['ANNUAL', 'Jan-Feb', 'Mar-May', 'Jun-Sep', 'Oct-Dec', 'avgjune', 'sub'] %}
+                                <span class="input-unit">(mm)</span>
+                                {% else %}
+                                <span class="input-unit">(value)</span>
+                                {% endif %}
+                            </div>
+                            <input type="number" step="any" name="{{ feature }}" id="{{ feature }}" required />
+                        </div>
+                        {% endfor %}
+                        {% if error %}
+                        <div class="error">{{ error }}</div>
+                        {% endif %}
+                        <div class="form-actions">
+                            <button type="submit" class="button primary">Predict Flood</button>
+                            <a class="button secondary" href="/">Back to Home</a>
+                        </div>
+                    </form>
+                </div>
+                <aside class="aside-panel">
+                    <h3>Prediction guidance</h3>
+                    <ul>
+                        <li>Use the most recent rainfall totals available.</li>
+                        <li>Enter humidity and cloud data precisely.</li>
+                        <li>Refresh the prediction after significant weather changes.</li>
+                    </ul>
+                    <div class="aside-note">
+                        <strong>Tip:</strong> Accurate inputs improve flood risk predictions.
+                    </div>
+                </aside>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>High-quality weather readings lead to better flood preparedness.</p>
+        </footer>
+    </div>
+</body>
+</html>

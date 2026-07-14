@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rising Waters • Flood Prediction</title>
+    <link rel="stylesheet" href="/static/main.css" />
+</head>
+<body class="page-home">
+    <div class="page-shell">
+        <header class="site-header">
+            <a class="brand" href="/">Rising Waters</a>
+            <nav class="site-nav">
+                <a href="/predict">Predict</a>
+                <a href="#features">Features</a>
+                <a href="#impact">Impact</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <video class="background-video" autoplay muted loop playsinline preload="metadata" poster="/static/media/flood_poster.jpg">
+                <!-- Local fallback first (place a MP4 at static/media/flood_fallback.mp4) -->
+                <source src="/static/media/flood_fallback.mp4" type="video/mp4" />
+                <!-- Reliable sample and remote fallbacks -->
+                <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4" />
+                <source src="https://cdn.coverr.co/videos/coverr-flooding-water-on-road-7492/1080p.mp4" type="video/mp4" />
+                <!-- Poster image will show if autoplay is blocked -->
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="hero-copy hero-panel">
+                <div class="hero-badge">Live Model Confidence: 95%</div>
+                <span class="eyebrow">Flood Early Warning System</span>
+                <h1>Transform weather data into reliable flood alerts.</h1>
+                <p>Rising Waters uses rainfall (mm), humidity (%), cloud cover (%), and seasonal patterns to deliver clear flood risk signals for fast decision-making.</p>
+                <div class="hero-actions">
+                    <a class="button primary large" href="/predict">Predict Flood Risk</a>
+                    <a class="button secondary" href="#features">Explore Features</a>
+                </div>
+            </div>
+        </section>
+
+        <main class="content">
+            <section class="feature-grid" id="features">
+                <article class="feature-card">
+                    <span class="feature-icon">🌧️</span>
+                    <h3>Weather-driven forecasts</h3>
+                    <p>Use current weather measurements to quickly assess flood probability.</p>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-icon">🧠</span>
+                    <h3>Machine Learning Core</h3>
+                    <p>Compare strong models like Decision Tree, Random Forest, KNN, and XGBoost.</p>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-icon">🚨</span>
+                    <h3>Actionable Output</h3>
+                    <p>Get a clear flood / no-flood signal for faster response planning.</p>
+                </article>
+            </section>
+
+            <section class="media-gallery" aria-label="Flood media gallery">
+                <h2 class="gallery-title">Recent Floods & Visuals</h2>
+                <p class="gallery-sub">Real-world photos and short clips to provide context and situational awareness.</p>
+                <div class="gallery-grid">
+                    <figure class="media-card">
+                            <img class="media-img" loading="lazy" decoding="async"
+                                src="/static/media/img1.jpg"
+                                alt="Flooded street with stalled cars" />
+                            <figcaption>Flooded urban street with stalled cars</figcaption>
+                    </figure>
+                    <figure class="media-card">
+                            <img class="media-img" loading="lazy" decoding="async"
+                                src="/static/media/img2.jpg"
+                                alt="River overflowing its banks" />
+                            <figcaption>River overflowing its banks</figcaption>
+                    </figure>
+                    <figure class="media-card">
+                            <img class="media-img" loading="lazy" decoding="async"
+                                src="/static/media/img3.jpg"
+                                alt="Emergency responders assisting residents" />
+                            <figcaption>Emergency responders assisting residents</figcaption>
+                    </figure>
+                    <figure class="media-card">
+                            <img class="media-img" loading="lazy" decoding="async"
+                                src="/static/media/img4.jpg"
+                                alt="Rescue boat evacuating people" />
+                            <figcaption>Rescue boat evacuating people</figcaption>
+                    </figure>
+                    <figure class="media-card">
+                            <img class="media-img" loading="lazy" decoding="async"
+                                src="/static/media/img5.jpg"
+                                alt="Flood relief volunteers assisting residents" />
+                            <figcaption>Flood relief volunteers assisting residents</figcaption>
+                    </figure>
+                    <figure class="media-card">
+                            <img class="media-img" loading="lazy" decoding="async"
+                                src="/static/media/img6.jpg"
+                                alt="Cars submerged after heavy rain" />
+                            <figcaption>Cars submerged after heavy rain</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="impact-panel" id="impact">
+                <div class="impact-copy">
+                    <h2>Built for rapid flood response.</h2>
+                    <p>This system helps disaster teams identify risk zones, manage evacuations, and allocate resources before flood conditions worsen.</p>
+                </div>
+                <div class="impact-list">
+                    <div class="impact-box">
+                        <h4>Accurate predictions</h4>
+                        <p>Strong model performance for trusted risk assessment.</p>
+                    </div>
+                    <div class="impact-box">
+                        <h4>Modern interface</h4>
+                        <p>An elegant UI designed for quick decision-making.</p>
+                    </div>
+                    <div class="impact-box">
+                        <h4>Deployment ready</h4>
+                        <p>Flask-based architecture ready for local and cloud use.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Rising Waters supports early warning and disaster preparedness.</p>
+        </footer>
+    </div>
+    <script>
+    // Lazy-load full images from data-src using IntersectionObserver
+    (function(){
+        const lazyImages = document.querySelectorAll('img.media-img.lazy');
+        if('IntersectionObserver' in window){
+            const io = new IntersectionObserver((entries)=>{
+                entries.forEach(entry=>{
+                    if(entry.isIntersecting){
+                        const img = entry.target;
+                        const full = img.getAttribute('data-src');
+                        if(full){
+                            img.src = full;
+                            img.addEventListener('load', ()=>{
+                                img.classList.remove('is-loading');
+                                img.classList.add('is-loaded');
+                            }, {once:true});
+                        }
+                        io.unobserve(img);
+                    }
+                });
+            },{rootMargin:'200px 0px'});
+            lazyImages.forEach(i=>io.observe(i));
+        } else {
+            // Fallback: load immediately
+            lazyImages.forEach(img=>{
+                const full = img.getAttribute('data-src');
+                if(full) img.src = full;
+                img.classList.remove('is-loading');
+                img.classList.add('is-loaded');
+            });
+        }
+    })();
+    </script>
+</body>
+</html>

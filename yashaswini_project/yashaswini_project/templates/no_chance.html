@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>No Flood Risk</title>
+    <link rel="stylesheet" href="/static/main.css" />
+</head>
+<body class="page-result">
+    <div class="page-shell">
+        <div class="page-background page-background-safe"></div>
+        <header class="site-header">
+            <a class="brand" href="/">Rising Waters</a>
+            <nav class="site-nav">
+                <a href="/predict">Predict Again</a>
+                <a href="/">Home</a>
+            </nav>
+        </header>
+
+        <section class="hero hero-small hero-safe hero-overlayed">
+            <div class="hero-copy">
+                <span class="eyebrow">Safe Conditions</span>
+                <h1>No flood risk detected</h1>
+                <p>Your current weather inputs indicate a low probability of flooding. Continue monitoring conditions regularly.</p>
+            </div>
+        </section>
+
+        <main class="content">
+            <div class="result-card safe">
+                <div class="result-head">
+                    <h2>Risk Level: Low</h2>
+                    <p>Conditions are stable for now, but keep updating the data as weather changes.</p>
+                </div>
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <span>Status</span>
+                        <strong>Stable</strong>
+                    </div>
+                    <div class="stat-card">
+                        <span>Advice</span>
+                        <strong>Monitor</strong>
+                    </div>
+                    <div class="stat-card">
+                        <span>Next step</span>
+                        <strong>Refresh data</strong>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <a class="button primary" href="/predict">Retry Prediction</a>
+                    <a class="button secondary" href="/">Return Home</a>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

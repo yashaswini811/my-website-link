@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flood Risk Alert</title>
+    <link rel="stylesheet" href="/static/main.css" />
+</head>
+<body class="page-result">
+    <div class="page-shell">
+        <div class="page-background page-background-alert"></div>
+        <header class="site-header">
+            <a class="brand" href="/">Rising Waters</a>
+            <nav class="site-nav">
+                <a href="/predict">Predict Again</a>
+                <a href="/">Home</a>
+            </nav>
+        </header>
+
+        <section class="hero hero-small hero-alert hero-overlayed">
+            <div class="hero-copy">
+                <span class="eyebrow">Flood Alert</span>
+                <h1>High flood risk detected</h1>
+                <p>The model indicates a likely flood event. Activate safety protocols and keep people informed.</p>
+            </div>
+        </section>
+
+        <main class="content">
+            <div class="result-card warning">
+                <div class="result-head">
+                    <h2>Risk Level: Critical</h2>
+                    <p>Weather conditions strongly suggest flood potential. Initiate emergency response now.</p>
+                </div>
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <span>Alert</span>
+                        <strong>Notify teams</strong>
+                    </div>
+                    <div class="stat-card">
+                        <span>Prepare</span>
+                        <strong>Secure zones</strong>
+                    </div>
+                    <div class="stat-card">
+                        <span>Monitor</span>
+                        <strong>Track updates</strong>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <a class="button primary" href="/predict">Retry Prediction</a>
+                    <a class="button secondary" href="/">Return Home</a>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

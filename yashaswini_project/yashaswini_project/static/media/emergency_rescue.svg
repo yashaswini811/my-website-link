@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#041527" />
+      <stop offset="100%" stop-color="#092a45" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)" />
+  <path d="M160 520 Q420 420 720 520 T1200 520 L1200 800 L0 800 Z" fill="#0f5f9f" opacity="0.9" />
+  <rect x="340" y="250" width="520" height="280" rx="34" fill="#143b64" />
+  <rect x="460" y="290" width="300" height="220" rx="18" fill="#e2f2ff" />
+  <circle cx="660" cy="380" r="70" fill="#0d4d77" />
+  <path d="M620 360 L700 360 M660 320 L660 440" stroke="#a9d6ff" stroke-width="24" stroke-linecap="round" />
+  <text x="600" y="720" text-anchor="middle" fill="#cbdfff" font-family="Inter, sans-serif" font-size="52" font-weight="700">Emergency Rescue</text>
+</svg>
